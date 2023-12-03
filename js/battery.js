@@ -11,6 +11,21 @@ const chargeMeter = document.querySelector('#battery dd:nth-of-type(2) progress'
 -------------------------------------------------- */
 // STEP 3a: Create the updateBatteryStatus() function
 function updateBatteryStatus(battery) {
+
+    /* 
+    Assignment: Lab 5 Battery.js API 
+    Due Date: 2023/12/06
+    Course: COMP1073-23F
+    Student Name: Matthew Antonis
+    Student Number: 200373088
+    */
+
+    // Generate the Robohash image URL based on battery level
+    let robohashImageUrl = `https://robohash.org/${battery.level * 100}.png`;
+    
+    // Set the src attribute of an img element (assuming an img element with id 'robohashImage' exists on your webpage)
+    document.querySelector('#robohashImage').src = robohashImageUrl;
+
     // STEP 3b: Update the charging status
     if (battery.charging === true) {
         chargeStatus.textContent = "Charging...";
